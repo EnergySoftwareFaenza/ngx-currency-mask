@@ -120,6 +120,41 @@
           }
         }
       }
+    },
+    "ng-currency-map": {
+      "projectType": "library",
+      "root": "projects/ng-currency-map",
+      "sourceRoot": "projects/ng-currency-map/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-currency-map/tsconfig.lib.json",
+            "project": "projects/ng-currency-map/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-currency-map/src/test.ts",
+            "tsConfig": "projects/ng-currency-map/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-currency-map/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-currency-map/tsconfig.lib.json",
+              "projects/ng-currency-map/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ngx-currency-mask"
 }

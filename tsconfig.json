@@ -10,17 +10,24 @@
     "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2015",
+    "target": "es5",
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-currency-map": [
+        "dist/ng-currency-map"
+      ],
+      "ng-currency-map/*": [
+        "dist/ng-currency-map/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "enableIvy": false
   }
 }
